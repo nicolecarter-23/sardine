@@ -1,0 +1,69 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: lightseagreen;
+    
+}
+
+#container {
+    display: flex;
+    
+}
+
+.sardine_container {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 4;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.cat_container {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    flex: 3;
+}
+
+.cat_shop_container {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    flex: 3;
+}
+
+.shelf {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 4;
+    text-align: center;
+    justify-content: left;
+
+}
+
+#footer {
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightcoral;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+}
