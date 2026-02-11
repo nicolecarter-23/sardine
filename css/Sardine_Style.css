@@ -3,67 +3,73 @@ body {
 }
 
 #header {
-    background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
-    border-radius: 10px;
+    background-color: rgb(254, 203, 7);
+    border: 5px solid rgb(238, 156, 178);
+    border-radius: 30px;
     display: flex;
     text-align: center;
     justify-content: center;
     color: lightseagreen;
+    margin: 5px;
     
 }
 
 #container {
     display: flex;
-    
+    max-height: 550px;
+    gap: 5px;
 }
 
-.sardine_container {
+#sardine-container {
     background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
-    border-radius: 10px;
+    border: 5px solid rgb(238, 156, 178) ;
+    border-radius: 30px;
     padding: 10px;
     flex: 4;
     text-align: center;
     justify-content: center;
-
+    overflow: hidden;   
 }
 
-.cat_container {
+.cat-container {
     background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
-    border-radius: 10px;
+    border: 5px solid rgb(238, 156, 178) ;
+    border-radius: 30px;
     padding: 10px;
     text-align: center;
     justify-content: center;
     flex: 3;
+    overflow: hidden;   
 }
 
-.cat_shop_container {
+.cat-shop-container {
     background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
-    border-radius: 10px;
+    border: 5px solid rgb(238, 156, 178);
+    border-radius: 30px;
     padding: 10px;
     text-align: center;
     justify-content: center;
     flex: 3;
+    overflow-y: auto;
+    max-height: 555px; 
 }
 
 .shelf {
+    display: flex;              
+    align-items: center;        
+    gap: 10px;                  
+    justify-content: flex-start; 
     background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
+    border: 5px solid rgb(238, 156, 178);
     border-radius: 10px;
     padding: 10px;
-    flex: 4;
-    text-align: center;
-    justify-content: left;
-
 }
 
 #footer {
     background-color: lightgoldenrodyellow;
-    border: 5px solid lightcoral;
+    border: 5px solid rgb(238, 156, 178);
     border-radius: 10px;
     text-align: center;
     justify-content: center;
+    margin: 5px;
 }
