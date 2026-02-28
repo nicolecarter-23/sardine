@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #header {
@@ -12,6 +12,10 @@ body {
     color: lightseagreen;
     margin: 5px;
     
+}
+
+h3{
+    color: grey;
 }
 
 #container {
@@ -70,7 +74,7 @@ body {
 }
 
 #footer {
-    background-color: lightgoldenrodyellow;
+    background-color: rgb(254, 203, 7);
     border: 5px solid rgb(238, 156, 178);
     border-radius: 10px;
     text-align: center;
