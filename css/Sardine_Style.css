@@ -48,6 +48,7 @@ h3{
 .living-room {
     border: 5px solid rgb(238, 156, 178) ;
     border-radius: 30px;
+    display: block;
 }
 
 .cat-container {
