@@ -50,6 +50,27 @@ h3{
     border-radius: 30px;
 }
 
+.cat-container {
+  position: relative; 
+  display: inline-block; 
+}
+
+.ALLCATS{
+  position:absolute;
+  left:0;
+  bottom:-40px;
+  margin: 20px;
+  width:90%;
+  height:50%;     
+}
+
+.ALLCATS img{
+  padding: 0.1px;
+  margin: 0.01px;
+  visibility: hidden;
+}
+
+
 .cat-shop-container {
     background-color: lightgoldenrodyellow;
     border: 5px solid rgb(238, 156, 178);
