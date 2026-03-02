@@ -13,6 +13,7 @@ window.addEventListener("load", function(){
     const shopItems = document.querySelectorAll(".shelf");
 
     //disabling & enabling shop buttons
+
     function updateShopButtons() {
         for (let i = 0; i < shopItems.length; i++) {
             const item = shopItems[i];
@@ -39,17 +40,17 @@ window.addEventListener("load", function(){
         }, 50);
 
         count += sardinesPerClick;
-        sardineCount.textContent = count;
+        sardineCount.innerHTML = count;
         updateShopButtons();
-        Rewards();
+        rewards();
     });
 
     //automatic sardine counter
     setInterval(function() {
         count += sardinesPerSecond;
-        sardineCount.textContent = count;
+        sardineCount.innerHTML = count;
         updateShopButtons();
-        Rewards();
+        rewards();
     }, 1000);
     
     const livingRoom = document.querySelector(".cat-container");
@@ -58,7 +59,7 @@ window.addEventListener("load", function(){
     for (let i = 0; i < shopItems.length; i++) {
         const item = shopItems[i];
         const shopCount = item.querySelector('.upgrade-count');
-        const upgradeName = item.querySelector("h2").textContent;
+        const upgradeName = item.querySelector("h2").innerHTML;
 
         let upgradeCounter = 0;
         item.style.cursor = "pointer";
@@ -67,10 +68,10 @@ window.addEventListener("load", function(){
             const cost = parseInt(item.dataset.cost);
             if (count < cost) return; //not enough sardines
             count -= cost;
-            sardineCount.textContent = count;
-            //multiply cost everytime you buy
-            item.dataset.cost = Math.floor(cost * 1.5);
-            item.querySelector("p").innerHTML = "Cost: " + item.dataset.cost;
+            sardineCount.innerHTML = count;
+
+            item.dataset.cost = Math.floor(cost * 1.5); //multiply cost everytime you buy
+            item.querySelector("p").innerHTML = "Cost: " + item.dataset.cost; //update cost display
             
             upgradeCounter += 1;
             shopCount.textContent = upgradeCounter;
@@ -89,26 +90,21 @@ window.addEventListener("load", function(){
                 sardinesPerSecond += 1;
                 catsOwned += 1;
                 new Cat("images/lazycatclear.png", livingRoom);
-         
-                
             }
             if (upgradeName === "Regular Cat") {
                 sardinesPerSecond += 10;
                 catsOwned += 1;
-                new Cat("images/regulargreycat105x130.png", livingRoom);
-                
+                new Cat("images/regulargreycat105x130.png", livingRoom);  
             }
             if (upgradeName === "Rich Cat") {
                 sardinesPerSecond += 15;
                 catsOwned += 1;
                 new Cat("images/richcat.png", livingRoom);
-
             }
             if (upgradeName === "Fat Cat") {
                 sardinesPerSecond += 25;
                 catsOwned += 1;
                 new Cat("images/fatcat.png", livingRoom);
-        
             }
         });
     }
@@ -118,10 +114,11 @@ window.addEventListener("load", function(){
         this.image = document.createElement("img");
         this.image.src = imageSrc;
         this.image.style.position = "absolute";
-        this.image.style.width = "80px";
+        this.image.style.width = "70px";
 
-        const maxX = container.clientWidth - 80;
-        const maxY = container.clientHeight - 80;
+        const padding = 60;
+        const maxX = container.clientWidth - 80 - padding * 2;
+        const maxY = container.clientHeight - 80 - padding * 2;
 
         const randomX = Math.random() * maxX;
         const randomY = Math.random() * maxY;
@@ -133,14 +130,11 @@ window.addEventListener("load", function(){
     }
     }
 
-    /*function updateUI() {
-        Rewards();            // show/hide achievements
-    }*/
-
-    function Rewards() {
+    //achievements & reward messages
+    function rewards() {
         const message = document.getElementById("rewardMessage");
 
-        if (count >= 10 && document.getElementById("Ach1").style.display !== "block") {
+        if (count >= 100 && document.getElementById("Ach1").style.display !== "block") {
             document.getElementById("Ach1").style.display = "block";
 
             message.innerHTML = "Achievement Unlocked!";
@@ -149,7 +143,7 @@ window.addEventListener("load", function(){
                 message.innerHTML = "Living Room";
             }, 4000);
         }
-        if (catsOwned >= 1 && document.getElementById("Ach2").style.display !== "block") {
+        else if (catsOwned >= 1 && document.getElementById("Ach2").style.display !== "block") {
             document.getElementById("Ach2").style.display = "block";
             message.innerHTML = "Achievement Unlocked!";
 
@@ -157,7 +151,7 @@ window.addEventListener("load", function(){
                 message.innerHTML = "Living Room";
             }, 4000);
         }
-        if (count>= 1000 && document.getElementById("Ach3").style.display !== "block") {
+        else if (count>= 1000 && document.getElementById("Ach3").style.display !== "block") {
             document.getElementById("Ach3").style.display = "block";
             message.innerHTML = "Achievement Unlocked!";
 
@@ -165,7 +159,7 @@ window.addEventListener("load", function(){
                 message.innerHTML = "Living Room";
             }, 4000);
         }
-        if (catsOwned >= 10 && document.getElementById("Ach4").style.display !== "block") {
+        else if (catsOwned >= 10 && document.getElementById("Ach4").style.display !== "block") {
             document.getElementById("Ach4").style.display = "block";
             message.innerHTML = "Achievement Unlocked!";
 
@@ -173,7 +167,7 @@ window.addEventListener("load", function(){
                 message.innerHTML = "Living Room";
             }, 4000);
         }
-        if (catsOwned >= 25 && document.getElementById("Ach5").style.display !== "block") {
+        else if (catsOwned >= 25 && document.getElementById("Ach5").style.display !== "block") {
             document.getElementById("Ach5").style.display = "block";
             message.innerHTML = "Achievement Unlocked!";
 
@@ -181,7 +175,7 @@ window.addEventListener("load", function(){
                 message.innerHTML = "Living Room";
             }, 4000);
         }
-        if (count >= 100000 && document.getElementById("Ach6").style.display !== "block") {
+        else if (count >= 100000 && document.getElementById("Ach6").style.display !== "block") {
             document.getElementById("Ach6").style.display = "block";
             message.innerHTML = "Achievement Unlocked!";
 

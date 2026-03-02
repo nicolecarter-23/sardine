@@ -19,7 +19,31 @@ Feb 25, 2026
         <h1>
             <img src="images/sardineTitle.jpg" height="120px">
         </h1>
+        <div class="help-container">
+            <span class="help-icon">?</span>
 
+            <div class="help-panel">
+                <h3>How To Play</h3>
+                <p>Click the sardine can to earn sardines.</p>
+                <p>Buy upgrades to earn more per click.</p>
+                <p>Buy cats to earn sardines automatically.</p>
+                <ul>
+                <li>Lazy Cat: 1 sardine/s</li>
+                <li>Regular Cat: 5 sardines/s</li>
+                <li>Rich Cat: 15 sardines/s</li>
+                <li>Fat Cat: 25 sardines/s</li>
+                </ul>
+                <p>Unlock achievements as you progress!<br>
+                <li>100 Sardines</li>
+                <li>Official Cat Owner: Purchase your first cat</li>
+                <li>1000 Sardines</li>
+                <li>Crazy Cat Lady: Purchase 10 Cats</li>
+                <li>Cat Cafe Licsense: Purchase 15 Cats</li>
+                <li>100,000 Sardines</li>
+                </ul>
+                </p>
+            </div>
+        </div>
     </div>
 
     <div id="container">
@@ -27,7 +51,6 @@ Feb 25, 2026
             <h1 id="sardine-count">0</h1>
             <h1>Sardines</h1>
             <img id="sardine-can" src="images/Sardine_can_image-removebg-preview.png" width="400px" height="400px">
-
         </div>
 
         <div class="cat-container">
@@ -37,11 +60,11 @@ Feb 25, 2026
             <img class="living-room" src="images/livingroom.jpg" width="400px">
             <div class="Achivments">
                 <p id="Ach1">100 Sardines</p>
-                <p id="Ach2">Offical Cat owner</p>
+                <p id="Ach2">Official Cat Owner</p>
                 <p id="Ach3">1000 Sardines</p>
                 <p id="Ach4">Crazy Cat Lady</p>
                 <p id="Ach5">Cat Cafe Licence</p>
-                <p id="Ach6">100 thousand Sardines</p>
+                <p id="Ach6">100,000 Sardines</p>
             </div>
 
         </div>
@@ -70,28 +93,28 @@ Feb 25, 2026
                     <p>Cost: 300</p>
                     <h3><span class="upgrade-count">0</span></h3>
                 </div>
-                <div class="shelf" data-cost="500">
+                <div title = "add +1 sardine per second" class="shelf" data-cost="500">
                     <img id = "LazyCat" src="images/lazycatclear.png">
                     <h2>Lazy Cat</h2>
                     <p>Cost: 500</p>
                     <h3><span class="upgrade-count">0</span></h3>
                 </div>
 
-                <div class="shelf" data-cost="1000">
+                <div title = "add +10 sardines per second" class="shelf" data-cost="1000">
                     <img id = "RegCat" src="images/regulargreycat105x130.png">
                     <h2>Regular Cat</h2>
                     <p>Cost: 1000</p>
                     <h3><span class="upgrade-count">0</span></h3>
                 </div>
 
-                <div class="shelf" data-cost="2500">
+                <div title = "add +15 sardines per second" class="shelf" data-cost="2500">
                     <img id = "RichCat" src="images/richcat.png">
                     <h2>Rich Cat</h2>
                     <p>Cost: 2500</p>
                     <h3><span class="upgrade-count">0</span></h3>
                 </div>
 
-                <div class="shelf" data-cost="5000">
+                <div title = "add +25 sardines per second" class="shelf" data-cost="5000">
                     <img id = "FatCat" src="images/fatcat.png">
                     <h2>Fat Cat</h2>
                     <p>Cost: 5000</p>
