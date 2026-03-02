@@ -40,14 +40,16 @@ window.addEventListener("load", function(){
 
         count += sardinesPerClick;
         sardineCount.textContent = count;
-        updateUI();
-
+        updateShopButtons();
+        Rewards();
     });
 
     //automatic sardine counter
     setInterval(function() {
         count += sardinesPerSecond;
         sardineCount.textContent = count;
+        updateShopButtons();
+        Rewards();
     }, 1000);
     
     const livingRoom = document.querySelector(".cat-container");
@@ -97,7 +99,7 @@ window.addEventListener("load", function(){
                 
             }
             if (upgradeName === "Rich Cat") {
-                sardinesPerSecond += 1;
+                sardinesPerSecond += 15;
                 catsOwned += 1;
                 new Cat("images/richcat.png", livingRoom);
 
@@ -131,38 +133,61 @@ window.addEventListener("load", function(){
     }
     }
 
-    function updateUI() {
-        updateShopButtons();  // enable/disable shop
+    /*function updateUI() {
         Rewards();            // show/hide achievements
-    }
+    }*/
 
     function Rewards() {
+        const message = document.getElementById("rewardMessage");
 
-        if (count >= 10) {
+        if (count >= 10 && document.getElementById("Ach1").style.display !== "block") {
             document.getElementById("Ach1").style.display = "block";
+
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
         }
-        if (catsOwned >= 1) {
+        if (catsOwned >= 1 && document.getElementById("Ach2").style.display !== "block") {
             document.getElementById("Ach2").style.display = "block";
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
         }
-        if (catsOwned >= 10) {
+        if (count>= 1000 && document.getElementById("Ach3").style.display !== "block") {
             document.getElementById("Ach3").style.display = "block";
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
         }
-        if (catsOwned >= 25) {
-            document.getElementById("Ach5").style.display = "block";
-        }
-        if (catsOwned >= 50) {
-            document.getElementById("Ach6").style.display = "block";
-        }
-        if (catsOwned >= 100) {
-            document.getElementById("Ach7").style.display = "block";
-        }
-        if (count >= 1000) {
+        if (catsOwned >= 10 && document.getElementById("Ach4").style.display !== "block") {
             document.getElementById("Ach4").style.display = "block";
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
         }
-        if (count >= 100000) {
-            document.getElementById("Ach7").style.display = "block";
+        if (catsOwned >= 25 && document.getElementById("Ach5").style.display !== "block") {
+            document.getElementById("Ach5").style.display = "block";
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
+        }
+        if (count >= 100000 && document.getElementById("Ach6").style.display !== "block") {
+            document.getElementById("Ach6").style.display = "block";
+            message.innerHTML = "Achievement Unlocked!";
+
+            setTimeout(function(){
+                message.innerHTML = "Living Room";
+            }, 4000);
         }
     }
-
-
 });

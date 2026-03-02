@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
 }
 
 #header {
@@ -51,38 +56,19 @@ h3{
     display: block;
 }
 
-.AchivmentsTop, .AchivmentsBtm {
+.Achivments {
   position: relative; 
-  display: inline-block; 
+  display: flex; 
+  color: rgb(46, 46, 107);
+  font-weight: bold;
 }
 
-.AchivmentsTop {
-  position:absolute;
-  display: flex;
-  left:539px;
-  bottom:-60px;
-  margin: 20px;
-  width:80%;
-  height:50%;     
-}
-
-.AchivmentsBtm {
-  position:absolute;
-  display: flex;
-  left:542px;
-  bottom:-110px;
-  margin: 20px;
-  width:80%;
-  height:50%;     
-
-}
-
-#Ach1, #Ach2, #Ach3, #Ach4, #Ach5, #Ach6, #Ach7, #Ach8 {
+#Ach1, #Ach2, #Ach3, #Ach4, #Ach5, #Ach6 {
     padding: 4px;
     display: none;
 }
 
-.AchivmentsTop, .AchivmentsBtm p {
+.Achivments {
     font-size: 11.7px;
     font-family: cursive;
 }
