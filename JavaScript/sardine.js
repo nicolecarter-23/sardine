@@ -5,6 +5,7 @@ window.addEventListener("load", function(){
     let count = 0;
     let sardinesPerClick = 1;
     let sardinesPerSecond = 0;
+    let catsOwned = 0;
 
     sardineTin.style.transition = "transform 0.2s";
     sardineTin.style.cursor = "pointer";
@@ -28,6 +29,7 @@ window.addEventListener("load", function(){
             }
         }
     }
+
     //click animation
     sardineTin.addEventListener("click", function() {
         sardineTin.style.transform = "scale(1.1)";
@@ -38,7 +40,7 @@ window.addEventListener("load", function(){
 
         count += sardinesPerClick;
         sardineCount.textContent = count;
-        updateShopButtons();
+        updateUI();
 
     });
 
@@ -46,7 +48,6 @@ window.addEventListener("load", function(){
     setInterval(function() {
         count += sardinesPerSecond;
         sardineCount.textContent = count;
-        updateShopButtons();
     }, 1000);
     
     const livingRoom = document.querySelector(".cat-container");
@@ -84,98 +85,31 @@ window.addEventListener("load", function(){
 
             if (upgradeName === "Lazy Cat") {
                 sardinesPerSecond += 1;
+                catsOwned += 1;
                 new Cat("images/lazycatclear.png", livingRoom);
+         
+                
             }
             if (upgradeName === "Regular Cat") {
                 sardinesPerSecond += 10;
+                catsOwned += 1;
                 new Cat("images/regulargreycat105x130.png", livingRoom);
+                
             }
             if (upgradeName === "Rich Cat") {
                 sardinesPerSecond += 1;
+                catsOwned += 1;
                 new Cat("images/richcat.png", livingRoom);
+
             }
             if (upgradeName === "Fat Cat") {
                 sardinesPerSecond += 25;
+                catsOwned += 1;
                 new Cat("images/fatcat.png", livingRoom);
+        
             }
         });
     }
-/*
-    function updateShop(){
-
-    }
-
-    const BtnLazyCat = this.document.getElementById("LazyCat");
-    const BtnRegCat = this.document.getElementById("RegCat");
-    const BtnRichCat = this.document.getElementById("RichCat");
-    const BtnFatCat = this.document.getElementById("FatCat");
-
-    const LazyCat0 = document.getElementById("LazyCat0");
-    const LazyCat1 = document.getElementById("LazyCat1");
-    const LazyCat2 = document.getElementById("LazyCat2");
-    const LazyCat3 = document.getElementById("LazyCat3");
-    const LazyCat4 = document.getElementById("LazyCat4");
-
-    let LcurrentCat = 0;
-
-    BtnLazyCat.addEventListener("click", function(event) {
-
-        if (LcurrentCat < 5) {
-        document.getElementById("LazyCat" + LcurrentCat).style.visibility = "visible";
-        LcurrentCat++;
-        }
-
-    });
-
-    let RecurrentCat = 0;
-
-    BtnRegCat.addEventListener("click", function(event) {
-        const RegCat0 = document.getElementById("RegCat0");
-        const RegCat1 = document.getElementById("RegCat1");
-        const RegCat2 = document.getElementById("RegCat2");
-        const RegCat3 = document.getElementById("RegCat3");
-        const RegCat4 = document.getElementById("RegCat4");
-
-        if (RecurrentCat < 5) {
-        document.getElementById("RegCat" + RecurrentCat).style.visibility = "visible";
-        RecurrentCat++;
-        }
-
-
-    });
-
-    let RicurrentCat = 0;
-
-    BtnRichCat.addEventListener("click", function(event) {
-        const RichCat0 = document.getElementById("RichCat0");
-        const RichCat1 = document.getElementById("RichCat1");
-        const RichCat2 = document.getElementById("RichCat2");
-        const RichCat3 = document.getElementById("RichCat3");
-        const RichCat4 = document.getElementById("RichCat4");
-
-        if (RicurrentCat < 5) {
-        document.getElementById("RichCat" + RicurrentCat).style.visibility = "visible";
-        RicurrentCat++;
-        }
-
-    });
-
-    let FcurrentCat = 0;
-
-    BtnFatCat.addEventListener("click", function(event) {
-        const FatCat0 = document.getElementById("FatCat0");
-        const FatCat1 = document.getElementById("FatCat1");
-        const FatCat2 = document.getElementById("FatCat2");
-        const FatCat3 = document.getElementById("FatCat3");
-        const FatCat4 = document.getElementById("FatCat4");
-
-        if (FcurrentCat < 5) {
-        document.getElementById("FatCat" + FcurrentCat).style.visibility = "visible";
-        FcurrentCat++;
-        }
-
-    });
-    */
 
     class Cat {
     constructor(imageSrc, container) {
@@ -196,4 +130,39 @@ window.addEventListener("load", function(){
         container.appendChild(this.image);
     }
     }
+
+    function updateUI() {
+        updateShopButtons();  // enable/disable shop
+        Rewards();            // show/hide achievements
+    }
+
+    function Rewards() {
+
+        if (count >= 10) {
+            document.getElementById("Ach1").style.display = "block";
+        }
+        if (catsOwned >= 1) {
+            document.getElementById("Ach2").style.display = "block";
+        }
+        if (catsOwned >= 10) {
+            document.getElementById("Ach3").style.display = "block";
+        }
+        if (catsOwned >= 25) {
+            document.getElementById("Ach5").style.display = "block";
+        }
+        if (catsOwned >= 50) {
+            document.getElementById("Ach6").style.display = "block";
+        }
+        if (catsOwned >= 100) {
+            document.getElementById("Ach7").style.display = "block";
+        }
+        if (count >= 1000) {
+            document.getElementById("Ach4").style.display = "block";
+        }
+        if (count >= 100000) {
+            document.getElementById("Ach7").style.display = "block";
+        }
+    }
+
+
 });
