@@ -13,7 +13,6 @@ window.addEventListener("load", function(){
     const shopItems = document.querySelectorAll(".shelf");
 
     //disabling & enabling shop buttons
-
     function updateShopButtons() {
         for (let i = 0; i < shopItems.length; i++) {
             const item = shopItems[i];
@@ -109,6 +108,7 @@ window.addEventListener("load", function(){
         });
     }
 
+    //cat object for living room
     class Cat {
     constructor(imageSrc, container) {
         this.image = document.createElement("img");
@@ -116,12 +116,23 @@ window.addEventListener("load", function(){
         this.image.style.position = "absolute";
         this.image.style.width = "70px";
 
-        const padding = 60;
-        const maxX = container.clientWidth - 80 - padding * 2;
-        const maxY = container.clientHeight - 80 - padding * 2;
+        const containerWidth = container.clientWidth;
+        const containerHeight = container.clientHeight;
 
-        const randomX = Math.random() * maxX;
-        const randomY = Math.random() * maxY;
+        const catWidth = 70;
+        const catHeight = 70;
+
+        //center area
+        const zoneWidth = containerWidth * 0.5;
+        const zoneHeight = containerHeight * 0.5;
+
+        //starting points of center area
+        const zoneStartX = (containerWidth - zoneWidth) / 2;
+        const zoneStartY = (containerHeight - zoneHeight) / 2;
+
+        //random position generator
+        const randomX = zoneStartX + Math.random() * (zoneWidth - catWidth);
+        const randomY = zoneStartY + Math.random() * (zoneHeight - catHeight);
 
         this.image.style.left = randomX + "px";
         this.image.style.top = randomY + "px";
